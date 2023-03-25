@@ -1,13 +1,21 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import React from 'react'; // Import the React library
+import ReactDOM from 'react-dom/client'; // Import the ReactDOM library
+import './index.css'; // Import a CSS file
+import App from './App'; // Import the main App component
+import { BrowserRouter } from 'react-router-dom'; // Import the BrowserRouter component
+import UserProvider from './Context/UserProvider'; // Import the UserProvider component
 
-import App from "./App";
-
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
-
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
+const root = ReactDOM.createRoot(document.getElementById('root')); // Get the root DOM node and create a React root
+root.render( // Render the App component inside the root React root
+  <React.StrictMode> 
+    {/* // Enable strict mode to catch potential issues */}
+    <UserProvider>
+       {/* // Provide the UserProvider to the App component and its children */}
+      <BrowserRouter>
+       {/* // Use the BrowserRouter to enable client-side routing */}
+        <App />
+         {/* // Render the main App component */}
+      </BrowserRouter>
+    </UserProvider>
+  </React.StrictMode>
 );

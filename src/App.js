@@ -1,10 +1,12 @@
-import "./styles.css";
+import './App.css';
+import Allroutes from './routes/Allroutes';
 
-export default function App() {
+function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <Allroutes />
     </div>
   );
 }
+
+export default App;
