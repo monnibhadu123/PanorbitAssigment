@@ -1,11 +1,17 @@
-import './styles.css';
-import Allroutes from './routes/Allroutes';
+import React from 'react';
+import './App.scss';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Profile from './components/Profile';
 
 function App() {
   return (
-    <div className="App">
-      <Allroutes />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/user/:userId" component={Profile} />
+        <Route path="/" component={Home} />
+      </Switch>
+    </Router>
   );
 }
 
